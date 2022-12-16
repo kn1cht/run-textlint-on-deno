@@ -1,5 +1,6 @@
 {
   "rules": {
+    "ng-word": { "words": ["猫"] },
     "preset-ja-technical-writing": true
   }
 }
