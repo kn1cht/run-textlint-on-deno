@@ -1,0 +1,11 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  textlint:
+    name: Check by textlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: denoland/setup-deno@v1
+      - name: Run textlint
+        run: find . -type f -name '*.md' -or -name '*.tex' | xargs deno run --allow-env --allow-read --allow-sys textlint.ts
